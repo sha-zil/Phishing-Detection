@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phishing Check</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+<div class="tl">
+    {% for i in det %}
+    {{i}}<br>
+    {% endfor %}
+</div>
+
+<div class="mainc">
+    <div class="result">
+        {% for i in res %}
+        {{i}}<br>
+        {% endfor %}
+        <br><br>
+    </div>
+        <form action="/" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Back" class="subButton">
+        </form>
+    </div>
+</body>
+</html>
